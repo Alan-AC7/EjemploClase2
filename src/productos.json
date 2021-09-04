@@ -1,0 +1,14 @@
+{
+"Prendas":[
+{"id":"1","Pnombre":"Camiseta","precio":14.99, "cantidad":1},
+{"id":"2","Pnombre":"Sudadera","precio":24.99, "cantidad":1},
+{"id":"3","Pnombre":"Vestido","precio":19.99, "cantidad":1},
+{"id":"4","Pnombre":"Sueter","precio":18.99, "cantidad":1},
+{"id":"5","Pnombre":"Gorra","precio":4.99, "cantidad":1},
+{"id":"6","Pnombre":"Guantes","precio":6.99, "cantidad":1},
+{"id":"7","Pnombre":"Shorts","precio":9.99, "cantidad":1},
+{"id":"8","Pnombre":"Pantalon","precio":22.99, "cantidad":1},
+{"id":"9","Pnombre":"Chaqueta","precio":29.99, "cantidad":1},
+{"id":"10","Pnombre":"Lentes","precio":8.99, "cantidad":1}
+]
+}

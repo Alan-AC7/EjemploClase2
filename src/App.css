@@ -17,8 +17,8 @@ html {
   height: 100%;
   }
   body {
-  background-image: linear-gradient(to bottom right, #33475b, #0033CC, #FF77CC, rgb(255, 122, 89));
-  color: white;
+    background: rgb(55,34,195);
+    background: linear-gradient(0deg, rgba(55,34,195,1) 0%, rgba(2,229,240,1) 100%);
   }
 
 .App-header {

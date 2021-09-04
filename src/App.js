@@ -1,61 +1,73 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import Productos from './productos.json';
+import NumericInput from 'react-numeric-input';
+
 
 
 function App() {
-  const [dolar, setdolar] = useState(0);
-  const [Bitcoin, setBitcoin] = useState(0);
-  const [Euro, setEuro] = useState(0);
-  const [Sol, setSol] = useState(0);
-  const [PesoM, setPesoM] = useState(0);
-  const [PesoA, setPesoA] = useState(0);
+  
+  return (
+    <div className="App">
+      <h1>Lista de Compra</h1>
 
-  const [tipo, setTipo] = useState(1);
-  const [total, setTotal] = useState(0);
-
-  useEffect(() => {
-    setdolar((total * tipo) / 1);
-    setBitcoin((total * tipo) / (0.000021));
-    setEuro((total * tipo) / (0.85));
-    setSol((total * tipo) / 4.07);
-    setPesoM((total * tipo) / 19.88 );
-    setPesoA((total * tipo) / 96.60 );
-  }, [total, tipo]);
+   
+      <hr />
 
 
-  const handleTotalChange = e => {
-    if (!isNaN(e.target.value)) {
-      setTotal(e.target.value);
-    }
+<form>
+   
+      <select id="articulo" >
+      <option >--Seleccione su Prenda--</option>
+        {
+          Productos.Prendas.map((result)=>(<option value={result.precio} text={result.id }>{result.Pnombre} </option> )   )
+        }
+
+      </select>
+      <button> Agregar al carrito </button>
+      </form>
+      <hr/>
+     
+
+
+
+
+      <table>
+      <thead>
+      <th>Articulo</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Subtotal</th>
+      <th>Eliminar</th>
+      </thead>
+      <tbody>
+      
+      <td></td>
+      <td></td>
+      <td><NumericInput/></td>
+      <td></td>
+      <td><button>Eliminar</button></td>
+
+    
+        
+      </tbody>
+      </table>
+    </div>
+  );
+
+
+ 
+
+      
+ 
+    
+  
+
+    
   };
 
 
-  return (
-    <div className="App">
-      <h1>Convertidor de Divisas</h1>
 
-      <p>Dolar: {dolar}</p>
-      <p>Bitcoin: {Bitcoin}</p>
-      <p>Euro: {Euro}</p>
-      <p>Sol Peruano: {Sol}</p>
-      <p>Peso Mexicano: {PesoM}</p>
-      <p>Peso Argentino: {PesoA}</p>
-
-      <hr />
-
-      <h3>{total}</h3>
-
-      <select onChange={event => setTipo(event.target.value)} value={tipo}>
-        <option value={1}>Dolares</option>
-        <option value={0.000021}>Bitcoin</option>
-        <option value={0.85}>Euro</option>
-        <option value={4.07}>Sol Peruano</option>
-        <option value={19.88}>Peso Mexicano</option>
-        <option value={96.60 }>Peso Argentino</option>
-      </select>
-      <input onChange={handleTotalChange} value={total} />
-    </div>
-  );
-}
+ 
 
 export default App;
